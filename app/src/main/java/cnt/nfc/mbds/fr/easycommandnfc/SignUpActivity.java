@@ -39,7 +39,7 @@ public class SignUpActivity extends AppCompatActivity {
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                createUser(editTextUsername.getText().toString().trim(), editTextEmail.getText().toString().trim(), editTextPassword.getText().toString().trim());
+                createUser(editTextUsername.getText().toString().trim(), editTextPassword.getText().toString().trim(),editTextEmail.getText().toString().trim());
             }
         });
     }
