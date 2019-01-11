@@ -11,7 +11,7 @@ import java.io.IOException;
 
 import cnt.nfc.mbds.fr.easycommandnfc.api.RetrofitInstance;
 import cnt.nfc.mbds.fr.easycommandnfc.api.UserClient;
-import cnt.nfc.mbds.fr.easycommandnfc.api.model.Login;
+import cnt.nfc.mbds.fr.easycommandnfc.api.model.User;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -45,7 +45,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void createUser(String username, String email, String password) {
-        Call<ResponseBody> call = userClient.createUser(new Login(username, email, password));
+        Call<ResponseBody> call = userClient.createUser(new User(username, email, password));
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
