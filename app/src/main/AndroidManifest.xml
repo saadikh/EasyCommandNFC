@@ -2,17 +2,47 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cnt.nfc.mbds.fr.easycommandnfc">
 
+    <!-- for connecting internet -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.NFC" />
 
+    <!-- for NFC -->
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="true" />
+
+    <!-- just offer this app to nfc phone -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
+        android:theme="@style/AppTheme">
+        <activity android:name=".LoginActivity" />
 
+        <!-- activity for nfc tag -->
+        <activity
+            android:name=".nfc.TagActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+                <data android:mimeType="application/cnt.nfc.mbds.fr.easycommandnfc" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".nfc.TagManagerActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop">
+
+        </activity>
+        <activity android:name=".SignInActivity" />
+        <activity android:name=".SignUpActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,8 +50,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".SignInActivity"></activity>
     </application>
 
 </manifest>

@@ -19,6 +19,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class SignInActivity extends AppCompatActivity {
+
     private AuthClient authClient = RetrofitInstance.getRetrofitInstance().create(AuthClient.class);
     EditText mUsername;
     EditText mPassword;
@@ -73,5 +74,4 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
     }
-
 }

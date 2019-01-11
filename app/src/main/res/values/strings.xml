@@ -3,4 +3,20 @@
     <string name="btnValidate">Login</string>
     <string name="pwd_txt">Password</string>
     <string name="username_txt">Username</string>
+
+    <!-- tagreader-->
+    <string name="hello_world">Hello world!</string>
+    <string name="nfc_reading">Reading NFC&#8230;</string>
+    <string name="share">SHARE</string>
+    <string name="clear">CLEAR</string>
+    <string name="label_demo_nfc">Lecture et écriture de TAG NFC</string>
+    <string name="message">Veuillez écrire un message....</string>
+    <string name="UID">UID : </string>
+    <string name="NDEF">NDEF : </string>
+    <string name="notification">Creer une notification</string>
+    <string name="apropos">A propos</string>
+    <string name="quitter">Quitter</string>
+    <string name="retour">Retour</string>
+    <string name="mbds">MBDS</string>
+    <string name="read">Read</string>
 </resources>

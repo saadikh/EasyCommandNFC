@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical|center_horizontal"
+    android:gravity="top"
+    android:orientation="vertical"
+    tools:context="cnt.nfc.mbds.fr.easycommandnfc.nfc.TagActivity">
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:scaleType="fitCenter"
+        android:layout_gravity="top"
+        android:layout_marginTop="50sp"
+        android:layout_marginBottom="10sp"
+        android:src="@drawable/ic_nfc"
+         />
+
+    <LinearLayout
+        android:id="@+id/nfc_searching"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginRight="5dp"
+            android:indeterminate="true" />
+
+        <TextView
+            android:id="@+id/text_nfc_reading"
+            android:textAppearance="@android:style/TextAppearance.Holo.Large.Inverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/nfc_reading"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

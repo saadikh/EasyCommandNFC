@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    tools:context="cnt.nfc.mbds.fr.easycommandnfc.nfc.TagManagerActivity">
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        style="@style/textShadow"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="@string/label_demo_nfc"
+        android:textAlignment="center" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:contentDescription="@string/mbds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textViewTitle"
+        android:src="@drawable/mbds"
+       />
+
+    <TextView
+        android:id="@+id/textViewUIDlabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView1"
+        android:layout_alignStart="@+id/textViewTagNFC"
+        android:text="@string/UID" />
+
+    <TextView
+        android:id="@+id/textViewUID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textViewUIDlabel"
+        android:layout_toEndOf="@+id/textViewUIDlabel"/>
+
+    <TextView
+        android:id="@+id/textViewNDEFlabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewUID"
+        android:layout_alignStart="@+id/textViewTagNFC"
+        android:layout_marginBottom="20dp"
+        android:text="@string/NDEF" />
+
+    <TextView
+        android:id="@+id/textViewNDEF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textViewNDEFlabel"
+        android:layout_toEndOf="@+id/textViewNDEFlabel"/>
+
+    <EditText
+        android:id="@+id/textViewTagNFC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewNDEF"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:background="@android:color/white"
+        android:ems="10"
+        android:hint="@string/message"
+        android:inputType="textMultiLine">
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/buttonClear"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonShare"
+        android:layout_alignEnd="@+id/textViewTagNFC"
+        android:layout_alignBottom="@+id/buttonShare"
+        android:background="@drawable/mybutton"
+        android:text="@string/clear"
+        android:textAlignment="center"
+        android:textColor="#ffffff" />
+
+
+    <Button
+        android:id="@+id/buttonRead"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonRead"
+        android:layout_marginHorizontal="120dp"
+        android:background="@drawable/mybutton"
+        android:text="@string/read"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        tools:ignore="NotSibling" />
+
+    <Button
+        android:id="@+id/buttonShare"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewTagNFC"
+        android:layout_alignStart="@+id/textViewTagNFC"
+        android:layout_marginTop="34dp"
+        android:background="@drawable/mybutton"
+        android:text="@string/share"
+        android:textAlignment="center"
+        android:textColor="#ffffff" />
+</RelativeLayout>
