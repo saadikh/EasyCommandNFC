@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.json.JSONObject;
+
 import java.io.IOException;
 
 import cnt.nfc.mbds.fr.easycommandnfc.api.AuthClient;
@@ -59,8 +61,15 @@ public class SignInActivity extends AppCompatActivity {
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
                     try {
-                        Toast.makeText(SignInActivity.this, response.body().string(), Toast.LENGTH_SHORT).show();
-                    } catch (IOException e) {
+                        JSONObject res = new JSONObject(response.body().string());
+                        Toast.makeText(SignInActivity.this, "Connected successfully", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(SignInActivity.this,MenuActivty.class);
+                        Bundle bundle = new Bundle();
+                        bundle.putString("username",res.getString("username"));
+                        bundle.putString("email",res.getString("email"));
+                        intent.putExtras(bundle);
+                        startActivity(intent);
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 } else {
