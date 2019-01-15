@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,10 +15,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class MenuActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+import cnt.nfc.mbds.fr.easycommandnfc.api.MenuApi;
+import cnt.nfc.mbds.fr.easycommandnfc.api.RetrofitInstance;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
+public class MenuActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    private MenuApi menuApi = RetrofitInstance.getRetrofitInstance().create(MenuApi.class);
+    String TAG = "MenuActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +59,7 @@ public class MenuActivity extends AppCompatActivity
         TextView email = headerLayout.findViewById(R.id.email);
         username.setText(data.getString("username"));
         email.setText(data.getString("email"));
+        loadMenu();
     }
 
     @Override
@@ -107,5 +117,30 @@ public class MenuActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void loadMenu(){
+        Call<ResponseBody> call = menuApi.getMenu();
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if(response.isSuccessful()){
+                    try{
+                        Toast.makeText(MenuActivity.this, response.body().string(), Toast.LENGTH_SHORT).show();
+                    }catch (Exception e){
+                        Toast.makeText(MenuActivity.this, "get menu error :/\n"+response.message(), Toast.LENGTH_SHORT).show();
+                    }
+                }else{
+                    Toast.makeText(MenuActivity.this, "get menu error :/\n"+response.message(), Toast.LENGTH_SHORT).show();
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            }
+        });
+
     }
 }
