@@ -1,4 +1,4 @@
-package cnt.nfc.mbds.fr.easycommandnfc.NFCtestfinal;
+package cnt.nfc.mbds.fr.easycommandnfc.nfc;
 
 import android.app.PendingIntent;
 import android.content.Intent;

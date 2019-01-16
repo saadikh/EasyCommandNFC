@@ -1,4 +1,4 @@
-package cnt.nfc.mbds.fr.easycommandnfc.NFCtestfinal;
+package cnt.nfc.mbds.fr.easycommandnfc.nfc;
 
 import android.content.Intent;
 import android.nfc.NdefMessage;

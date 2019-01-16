@@ -27,6 +27,43 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+
+    <!-- for nfceditor-->
     <!-- TODO: Remove or change this placeholder text -->
+
+
+    <string name="readButton">Read</string>
+    <string name="writeButton">Write</string>
+    <string name="eraseButton">Erase</string>
+
+    <string name="textButton">Text</string>
+    <string name="appliButton">Application</string>
+    <string name="urlButton">URL</string>
+
+    <string name="title_activity_read">Read the TAG</string>
+    <string name="title_activity_choice_write">Write on the TAG</string>
+    <string name="title_activity_write_text">Write text</string>
+    <string name="title_activity_write_app">Choose application</string>
+    <string name="title_activity_write_url">Write URL</string>
+    <string name="title_activity_erase">Erase the TAG</string>
+
+    <string name="uri">http://www.</string>
+
+    <string name="scan_your_tag">Scan your tag</string>
+
+    <string name="about_title">About</string>
+    <string name="about_desc">
+        Travail réalisé par : \n
+            \t\t - Mamadou Thiaw
+    </string>
+    <string name="about_action">About</string>
+    <string name="about_close">Close</string>
+
+    <string name="info_title">Information</string>
+    <string name="info_desc">
+    </string>
+    <string name="info_cancel">Cancel</string>
+    <string name="info_ok">OK</string>
+    <string name="appbar_scrolling_view_behavior">for writing to tag</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

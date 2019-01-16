@@ -13,7 +13,6 @@ import java.io.IOException;
 import cnt.nfc.mbds.fr.easycommandnfc.api.RetrofitInstance;
 import cnt.nfc.mbds.fr.easycommandnfc.api.UserClient;
 import cnt.nfc.mbds.fr.easycommandnfc.api.model.User;
-import cnt.nfc.mbds.fr.easycommandnfc.nfc.TagManagerActivity;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -55,8 +54,8 @@ public class SignUpActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     try {
                         Toast.makeText(SignUpActivity.this, response.body().string(), Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(SignUpActivity.this, TagManagerActivity.class);
-                        startActivity(intent);
+                        /*Intent intent = new Intent(SignUpActivity.this, TagManagerActivity.class);
+                        startActivity(intent);*/
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
